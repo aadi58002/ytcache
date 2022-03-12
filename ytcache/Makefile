@@ -25,10 +25,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(DIST_STATIC_DIR)/%: $(SRC_STATIC_DIR)/% | $(DIST_STATIC_DIR)
-	cp $< $@
+	cp -r $< $@
 
 $(DIST_DIR)/manifest.json: $(SRC_DIR)/manifest.json | $(DIST_DIR)
-	cp $< $@
+	cp -r $< $@
 
 $(DIST_DIR) $(DIST_STATIC_DIR) $(OBJ_DIR):
 	mkdir -p $@
